@@ -29,3 +29,37 @@ $(document).on("click", '[data-toggle="lightbox"]', function (event) {
     event.preventDefault();
     $(this).ekkoLightbox();
 });
+
+
+let slideIndex = 0;
+let firstTry = true;
+showSlides();
+
+function showSlides() {
+    
+  let i;
+  let slides = document.getElementsByClassName("slider_bg_box");
+    
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (firstTry) {
+    slideIndex = getRandomIntInclusive(1,slides.length);
+    firstTry = false;
+  }
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";
+
+
+  setTimeout(showSlides, 5000);
+}
+
+
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+}
+

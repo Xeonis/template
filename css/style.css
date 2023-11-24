@@ -546,12 +546,14 @@ a:focus {
 }
 
 .offer_section .box .detail-box a {
+  font-weight:  bolder ;
+  font-size: 1rem;
   display: inline-block;
   padding: 8px 40px;
   background-color: transparent;
-  color: #fd9c6b;
+  color: #812e05;
   border-radius: 0;
-  border: 1px solid #fd9c6b;
+  border: 1px solid #943e13;
   -webkit-transition: all .2s;
   transition: all .2s;
   margin-top: 10px;
@@ -964,3 +966,12 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+.slider_section .fade {
+  animation-fill-mode: forwards;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+@keyframes fade {
+  from {opacity: .1}
+  to {opacity: 1}
+}
